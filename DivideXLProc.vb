@@ -5,9 +5,9 @@
         hiXp% = d.FindHighExponent()
         z& = d(hiXp)
         Dim rest As New Hyper(d)
-        rest(hiXp) = 0
         rest.StripZeros()
-        rest.PartSize = rest.BufferSize
+        rest(hiXp) = 0
+        rest.PartSize = rest.BufferSize - 1
 
         one% = 1
 
