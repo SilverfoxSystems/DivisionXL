@@ -9,14 +9,36 @@
             Return r
         End If
 
-        If x > New Hyper("1") Then
-            r(0) = 1
-        Else
-            r = x.Clone
-            r.Multiply(2)
+        hiExp0% = x.FindHighExponent
+
+        If hiExp0 >= 0 Then
+            hiExp >>= 1
+            'hiExp += 1
+        Else 'if hiexp
+            hiExp += 1
+            hiExp \= 2
+            hiExp -= 1
 
         End If
-  
+
+        If x(hiExp0) = 1 Then
+            r(hiExp) = 1
+
+            GoTo skipp
+
+        End If
+        rut# = Math.Sqrt(x(hiExp0))
+
+        If (hiExp0 And 1) Then
+            tmp = New Hyper((1 / rut).ToString) ' * (2 ^ 63)
+            r(hiExp) = tmp(-1)
+        Else
+            r(hiExp) = rut
+        End If
+
+
+    skipp:
+    
         Dim tmp As Hyper
 
   
