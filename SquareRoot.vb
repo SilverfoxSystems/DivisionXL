@@ -4,7 +4,8 @@
         Dim half As New Hyper(0, -1)
         half(0) = 1
         half(-1) = &H8000000000000000
-  
+        Dim tmp As Hyper
+
         If Not x.IsNotZero Then
             Return r
         End If
@@ -13,7 +14,7 @@
 
         If hiExp0 >= 0 Then
             hiExp >>= 1
-            'hiExp += 1
+            
         Else 'if hiexp
             hiExp += 1
             hiExp \= 2
@@ -30,7 +31,7 @@
         rut# = Math.Sqrt(x(hiExp0))
 
         If (hiExp0 And 1) Then
-            tmp = New Hyper((1 / rut).ToString) ' * (2 ^ 63)
+            tmp = New Hyper((1 / rut).ToString) 
             r(hiExp) = tmp(-1)
         Else
             r(hiExp) = rut
@@ -39,8 +40,6 @@
 
     skipp:
     
-        Dim tmp As Hyper
-
   
         For i = 0 To nIterationsAtSqr
 
