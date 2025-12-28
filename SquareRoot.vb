@@ -11,7 +11,8 @@
         End If
 
         hiExp0% = x.FindHighExponent
-
+hiExp = hiExp0
+    
         If hiExp0 >= 0 Then
             hiExp >>= 1
             
