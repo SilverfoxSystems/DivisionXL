@@ -1,3 +1,6 @@
+Sub DivideXLnwt(ByRef r1 As Hyper, ByRef d As Hyper, prec%, Optional nIterations% = 5)
+    r1 *= Reciprocal(d, XLdivPrec, nIterationsAtDiv)
+End Sub
 
     Private Function Reciprocal(ByRef d As Hyper, prec%, nIterations%) As Hyper
         'r(new) = r(2- h*r)
