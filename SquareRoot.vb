@@ -106,9 +106,9 @@ End Sub
 
         'For i% = 0 To 30
 
-        While i2 < n
+        While i2 <= n
             If i2 And n Then
-                r *= tmp
+                r += tmp
             End If
 
             i2 <<= 1
